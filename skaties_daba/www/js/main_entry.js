@@ -15,6 +15,12 @@ var data_template = {
         },
         2: {
             1: []
+        },
+        3: {
+            1: []
+        },
+        4: {
+            1: null
         }
     },
 }
@@ -294,6 +300,7 @@ function onInfoClicked(){
     $('.subtask_'+current_subtask+' > .info-container').addClass('info-container--hidden');
     $(V.task_hint).fadeOut();
     setTimeout(function(){
+        // alert(current_subtask);
         $('.subtask_'+current_subtask+' > .info-container').hide();
         $('.subtask_'+current_subtask+' > .task-container').removeClass('task-container--hidden');
     },100);
@@ -325,6 +332,18 @@ exports.tasks = {
         types: [
             types_db['choose_possible']
         ]
+    },
+    3: {
+        subtasks: 1,
+        types: [
+            types_db['connect_image_to_text']
+        ]
+    },
+    4: {
+        subtasks: 1,
+        types: [
+            types_db['choose_correct']
+        ]
     }
 }
 
@@ -336,6 +355,9 @@ exports.answers = {
     },
     2: {
         1: [0,1,2]
+    },
+    3: {
+        1: [0,1,2,3]
     }
 }
 },{}],8:[function(require,module,exports){

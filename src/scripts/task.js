@@ -125,6 +125,7 @@ function onInfoClicked(){
     $('.subtask_'+current_subtask+' > .info-container').addClass('info-container--hidden');
     $(V.task_hint).fadeOut();
     setTimeout(function(){
+        // alert(current_subtask);
         $('.subtask_'+current_subtask+' > .info-container').hide();
         $('.subtask_'+current_subtask+' > .task-container').removeClass('task-container--hidden');
     },100);

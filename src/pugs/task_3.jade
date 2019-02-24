@@ -1,0 +1,63 @@
+html
+    include includes/header.pug
+        
+    body( id="task", class="noScroll", data-task="3" data-task-type="1" )
+
+        div#blur-wrapper.blur--hidden
+            include includes/navbar.pug
+
+
+        include includes/modal_quit.pug
+        include includes/modal_help.pug
+
+        span.task-hint
+            | Pieskaries, lai turpinātu
+
+        .subtask.subtask_1
+            .info-container
+                .task-info
+                    span.task-text.txt--justified
+                        | Etiķkoks - Auga nosaukumā etiķa klātbūtne nav nejaušība, jo auga ievainojuma vietās izdalās bieza, dzeltenīgas krāsas piensula, kura ir intensīvi sīva, un tāpēc arī augs iemantojis tieši tādu nosaukumu.<br> Koks ir ļoti dekoratīvs, labi izskatās jebkurā gadalaikā, tāpēc tas ir ļoti iecienīts gan privātos, gan publiskos apstādījumos.
+                        span.task-desc 
+                            | <i class="fas fa-tasks"></i>Sarindo attēlus pareizā secībā, sākot ar pavasari!
+            
+            .task-container.task-container--hidden
+                .task-type-1
+                    .top
+                        div( class="item item_1" data-item_id="1" ) 
+                            span.content Pavasaris
+                            span.item_nr 1
+                        div( class="item item_2" data-item_id="2" ) 
+                            span.content Vasara
+                            span.item_nr 2
+                        div( class="item item_3" data-item_id="3" ) 
+                            span.content Rudens
+                            span.item_nr 3
+                        div( class="item item_4" data-item_id="4" ) 
+                            span.content Ziema
+                            span.item_nr 4
+                    .bottom
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/3/item1.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden 1
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/3/item2.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden 2
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/3/item3.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden 3
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/3/item4.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden 4
+
+                    button( class="submit-task" data-task_id="1" ) Turpināt
+
+
+        div#screen-overlay.screen-overlay--hidden
+
+        
+        
+        div( id="transition-overlay", class="transition-overlay--visible" )
+
+        include includes/footer.pug
+        script( type="text/javascript", src="js/map.js" )

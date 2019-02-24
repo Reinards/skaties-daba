@@ -1,0 +1,47 @@
+html
+    include includes/header.pug
+        
+    body( id="task", class="noScroll", data-task="4" data-task-type="1" )
+
+        div#blur-wrapper.blur--hidden
+            include includes/navbar.pug
+
+
+        include includes/modal_quit.pug
+        include includes/modal_help.pug
+
+        span.task-hint
+            | Pieskaries, lai turpinātu
+
+        .subtask.subtask_1
+            .info-container
+                .task-info
+                    span.task-text.txt--justified
+                        | Niedre ir ļoti audzelīgs un agresīvs ūdensaugs - ņokļuvusi augšanai labvēlīgā teritorijā, pilnībā izspiež citus augus. Taču tās ir ekosistēmas daļa, kas pilda savu dabas doto uzdevumu -  attīra ūdeni un dod pajumti putniem un kukaiņiem.
+                        span.task-desc 
+                            | <i class="fas fa-tasks"></i>Izvēlies pareizo atbilžu variantu!
+            
+            .task-container.task-container--hidden
+                .task-type-2
+                    .top
+                        div( class="item item_1" data-item_id="1" ) 
+                            span.content Kā kurināmo
+                            span.item_nr 1
+                        div( class="item item_2" data-item_id="2" ) 
+                            span.content Mājlopu pārtikā
+                            span.item_nr 2
+                        div( class="item item_3" data-item_id="3" ) 
+                            span.content Kokteiļa salmiņu ražošanā
+                            span.item_nr 3
+
+                    button( class="submit-task" data-task_id="1" ) Turpināt
+
+
+        div#screen-overlay.screen-overlay--hidden
+
+        
+        
+        div( id="transition-overlay", class="transition-overlay--visible" )
+
+        include includes/footer.pug
+        script( type="text/javascript", src="js/map.js" )

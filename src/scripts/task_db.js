@@ -20,6 +20,18 @@ exports.tasks = {
         types: [
             types_db['choose_possible']
         ]
+    },
+    3: {
+        subtasks: 1,
+        types: [
+            types_db['connect_image_to_text']
+        ]
+    },
+    4: {
+        subtasks: 1,
+        types: [
+            types_db['choose_correct']
+        ]
     }
 }
 
@@ -31,5 +43,8 @@ exports.answers = {
     },
     2: {
         1: [0,1,2]
+    },
+    3: {
+        1: [0,1,2,3]
     }
 }

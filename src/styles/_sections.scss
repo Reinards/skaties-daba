@@ -466,6 +466,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 2vw;
+        grid-row-gap: 2vw;
 
         .img-item{
             position: relative;
