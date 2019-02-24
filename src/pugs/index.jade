@@ -1,0 +1,39 @@
+html
+    include includes/header.pug
+
+    body(id="home", class="noScroll" )
+        div( id="section_home" class="section" )
+
+            div( class="sponsors")
+                img( src="img/cif.jpg" )
+                img( src="img/saldus.jpg" )
+                img( src="img/kn.jpg" )
+
+            h1( class="title" ) skaties dabā
+            span( class="title__hint" ) Pieskaries, lai sāktu spēli
+
+            div( class="sky" )
+            div( class="grass" )
+            div( class="ground" )
+                img( class="tree t1", src="img/tree.svg" )
+                img( class="tree t2", src="img/tree.svg" )
+                img( class="tree t3", src="img/tree.svg" )
+                img( class="tree t4", src="img/tree.svg" )
+                img( class="tree t5", src="img/tree.svg" )
+                img( class="tree t6", src="img/tree.svg" )
+
+            div( class="ground-lvl2" )
+                img( class="tree t7", src="img/tree.svg")
+                img( class="tree t8", src="img/tree.svg")
+
+            div( class="ground-lvl3" )
+                img( class="tree t9", src="img/tree.svg" )
+                img( class="tree t10", src="img/tree.svg" )
+                img( class="tree t11", src="img/tree.svg" )
+
+
+        div( id="transition-overlay", class="transition-overlay" )
+
+        include includes/splash.pug
+
+        include includes/footer.pug

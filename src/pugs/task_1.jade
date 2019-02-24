@@ -1,0 +1,128 @@
+html
+    include includes/header.pug
+        
+    body( id="task", class="noScroll", data-task="1" data-task-type="1" )
+
+        div#blur-wrapper.blur--hidden
+            include includes/navbar.pug
+
+
+        include includes/modal_quit.pug
+        include includes/modal_help.pug
+
+        span.task-hint
+            | Pieskaries, lai turpinātu
+
+        .subtask.subtask_1
+            .info-container
+                .task-info
+                    span.task-text.txt--justified
+                        | Meža pīle ir vislabāk zināmā pīle visā pasaulē. Tā ir visēdāja - barojas ar augu jaunajām lapiņām,    pumpuriem, asniem, ūdensaugu jaunajiem dzinumiem, vabolēm, gliemežiem, tārpiem, vardēm, zivtiņām un citiem nelieliem dzīvniekiem. Tēviņu var ļoti viegli atšķirt no mātītes.
+                        span.task-desc 
+                            | <i class="fas fa-tasks"></i>Savieno nosaukumu ar pareizo attēlu!
+            
+            .task-container.task-container--hidden
+                .task-type-1
+                    .top
+                        div( class="item item_1" data-item_id="1" ) 
+                            span.content Pīļu tēviņš
+                            span.item_nr 1
+                        div( class="item item_2" data-item_id="2" ) 
+                            span.content Pīļu mātīte
+                            span.item_nr 2
+                    .bottom
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/1/item1.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden 1
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/1/item2.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden 2
+
+                    button( class="submit-task" data-task_id="1" ) Turpināt
+
+        .subtask.subtask_2.subtask--hidden
+            .info-container
+                .task-info
+                    span.task-text.txt--justified
+                        | Meža pīle var būt gan nometniece, gan daļēji migrējoša. Saldū dzīvojošās pīles jau daudzu gadu garumā ziemu pārlaiž tepat. Kādēļ tā notiek?
+                        span.task-desc 
+                            | <i class="fas fa-tasks"></i>Izvēlies pareizo atbilžu variantu!
+            
+            .task-container.task-container--hidden
+                .task-type-2
+                    .top
+                        div( class="item item_1" data-item_id="1" ) 
+                            span.content Ziemas ir kļuvušas siltākas
+                            span.item_nr 1
+                        div( class="item item_2" data-item_id="2" ) 
+                            span.content Pīlēm netrūkst barības
+                            span.item_nr 2
+
+                    button( class="submit-task" data-task_id="2" ) Turpināt
+        
+
+        .subtask.subtask_3.subtask--hidden
+            .info-container
+                .task-info
+                    span.task-text.txt--justified
+                        span.task-desc 
+                            | <i class="fas fa-tasks"></i>Savieno vārdu ar atbilstošo karogu!
+            
+            .task-container.task-container--hidden
+                .task-type-1.task-items--small
+                    .top
+                        div( class="item item_1" data-item_id="1" ) 
+                            span.content Meža pīle
+                            span.item_nr 1
+                        div( class="item item_2" data-item_id="2" ) 
+                            span.content Mallard
+                            span.item_nr 2
+                        div( class="item item_3" data-item_id="3" ) 
+                            span.content Stockente
+                            span.item_nr 3
+                        div( class="item item_4" data-item_id="4" ) 
+                            span.content Gräsand
+                            span.item_nr 4
+                        div( class="item item_5" data-item_id="5" ) 
+                            span.content Sinikael-part
+                            span.item_nr 5
+                        div( class="item item_6" data-item_id="6" ) 
+                            span.content Didžioji antis
+                            span.item_nr 6
+                        div( class="item item_7" data-item_id="7" ) 
+                            span.content Kряква
+                            span.item_nr 7
+                    .bottom
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/1/flags/latvian.png" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden 1
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/1/flags/british.png" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden 2
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/1/flags/german.png" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden 3
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/1/flags/swedish.png" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden 4
+                        div( class="img-item img-item_5" data-item_id="5" ) 
+                            img( src="img/tasks/1/flags/estonian.png" data-item-id="5" )
+                            span.img-overlay.img-overlay--hidden 5
+                        div( class="img-item img-item_6" data-item_id="6" ) 
+                            img( src="img/tasks/1/flags/lithuanian.png" data-item-id="6" )
+                            span.img-overlay.img-overlay--hidden 6
+                        div( class="img-item img-item_7" data-item_id="7" ) 
+                            img( src="img/tasks/1/flags/russian.png" data-item-id="7" )
+                            span.img-overlay.img-overlay--hidden 7
+
+                    button( class="submit-task" data-task_id="3" ) Turpināt
+
+
+        div#screen-overlay.screen-overlay--hidden
+
+        
+        
+        div( id="transition-overlay", class="transition-overlay--visible" )
+
+        include includes/footer.pug
+        script( type="text/javascript", src="js/map.js" )

@@ -1,0 +1,58 @@
+html
+    include includes/header.pug
+        
+    body( id="task", class="noScroll", data-task="2" data-task-type="1" )
+
+        div#blur-wrapper.blur--hidden
+            include includes/navbar.pug
+
+
+        include includes/modal_quit.pug
+        include includes/modal_help.pug
+
+        span.task-hint
+            | Pieskaries, lai turpinātu
+
+        .subtask.subtask_1
+            .info-container
+                .task-info
+                    span.task-text.txt--justified
+                        | Šī krūma ogas izmanto dažādu ievārījumu, sulu un mērču gatavošanai (piemēram, pie gaļas ēdieniem). Ogas kaltē, sāla un marinē. Auga jaunās lapas var izmantot skābeņu lapu vietā ēdienu pagatavošanā. Nogatavojušos ogu mīkstums tiek izmantots kā citronu aizvietotājs. <br> Kādas konfektes Latvijā ražo no šī krūma ogām?
+                        span.task-desc 
+                            | <i class="fas fa-tasks"></i>Izvēlies atbilstošos attēlus
+            
+            .task-container.task-container--hidden
+                .task-type-3
+                    .wrapper
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/2/item1.png" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden 1
+
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/2/item2.png" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden 1
+
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/2/item3.png" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden 1
+
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/2/item4.png" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden 1
+
+                        div( class="img-item img-item_5" data-item_id="5" ) 
+                            img( src="img/tasks/2/item5.jpg" data-item-id="5" )
+                            span.img-overlay.img-overlay--hidden 1
+
+                    button( class="submit-task" data-task_id="2" ) Turpināt
+
+
+        div#screen-overlay.screen-overlay--hidden
+
+        
+        
+        div( id="transition-overlay", class="transition-overlay--visible" )
+
+        include includes/footer.pug
+        script( type="text/javascript", src="js/map.js" )
+

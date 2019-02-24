@@ -1,0 +1,45 @@
+@font-face{
+    font-family: "Lalezar";
+    src: url('../fonts/lalezar.ttf');
+}
+
+@font-face{
+    font-family: "Montserat";
+    src: url('../fonts/m-reg.ttf');
+}
+
+
+$font-main: "Lalezar";
+$font-secondary: "Montserat";
+
+$time_logo_fadein: 3s;
+$time_modal: 1s;
+
+$gradient-begin: #547AE3;
+$gradient-end: #54A5E3;
+$gradient-begin--black: #515151;
+$gradient-end--black: #676767;
+$radius--small: 30vw;
+$radius--big: 70vw;
+//#547AE3 - #54A5E3
+
+// Z-----INDEXES
+$z-task-hint: 7;
+$z-navbar: 18;
+$z-blur: 8;
+$z-screen-overlay: 9;
+$z-modal: 10;
+$z-transition: 11;
+$z-splash: 12;
+
+
+@keyframes blink{
+    0% {opacity: 1};
+    50% {opacity: 0.2};
+    100% {opacity: 1};
+}
+
+@keyframes tree-swing{
+    0% { transform: rotateZ(4deg); }
+    100% { transform: rotateZ(-4deg); }
+}
