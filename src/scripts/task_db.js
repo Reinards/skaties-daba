@@ -32,6 +32,12 @@ exports.tasks = {
         types: [
             types_db['choose_correct']
         ]
+    },
+    5: {
+        subtasks: 1,
+        types: [
+            types_db['choose_correct']
+        ]
     }
 }
 

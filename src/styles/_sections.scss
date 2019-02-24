@@ -638,3 +638,21 @@
         opacity: 1;
     }
 }
+
+.custom-grid-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2vw;
+
+    .item{
+        img{
+            width: 100%;
+            height: auto;
+        }
+        span{
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+}

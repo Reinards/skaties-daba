@@ -21,6 +21,9 @@ var data_template = {
         },
         4: {
             1: null
+        },
+        5: {
+            1: null
         }
     },
 }
@@ -340,6 +343,12 @@ exports.tasks = {
         ]
     },
     4: {
+        subtasks: 1,
+        types: [
+            types_db['choose_correct']
+        ]
+    },
+    5: {
         subtasks: 1,
         types: [
             types_db['choose_correct']
