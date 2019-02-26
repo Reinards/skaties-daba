@@ -38,6 +38,13 @@ exports.tasks = {
         types: [
             types_db['choose_correct']
         ]
+    },
+    6: {},
+    7: {
+        subtasks: 1,
+        types: [
+            types_db['choose_correct']
+        ]
     }
 }
 
@@ -52,5 +59,17 @@ exports.answers = {
     },
     3: {
         1: [0,1,2,3]
+    },
+    4: {
+        1: 0
+    },
+    5: {
+        1: 0
+    },
+    6: {
+
+    },
+    7: {
+        1: 3
     }
 }

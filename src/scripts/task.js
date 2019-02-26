@@ -10,7 +10,7 @@ var game_state = null;
 var current_subtask = 1;
 var current_selected_item = -1;
 
-var local_answers = new Array();
+var local_answers = new Array(10);
 
 exports.init = function(){
     
@@ -90,12 +90,15 @@ function onImgItemClicked(t){
         var item_id = t.dataset.item_id;
 
         if(current_selected_item !== -1){
+            alert("test works");
+            console.log(current_subtask);
+            console.log(current_selected_item);
             $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').toggleClass('img-overlay--hidden');
             $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').html(current_selected_item);
     
-            while(local_answers.length < item_id-1){
-                local_answers.push();
-            }
+            // while(local_answers.length < item_id){
+            //     local_answers.push();
+            // }
             local_answers[item_id-1] = current_selected_item-1;
         }
     }

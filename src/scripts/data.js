@@ -23,6 +23,12 @@ var data_template = {
         },
         5: {
             1: null
+        },
+        6: {
+            1: []
+        },
+        7: {
+            1: null
         }
     },
 }
