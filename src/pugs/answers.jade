@@ -1,0 +1,25 @@
+html
+    include includes/header.pug
+
+    body( id="map", class="noScroll" )
+        
+        div#blur-wrapper.blur--hidden
+            include includes/navbar.pug
+    
+            div#map-wrapper
+                img( src="img/arrow.svg" class="map__arrow" )
+                .map__radius--small
+                .map__radius--big
+
+        div#screen-overlay.screen-overlay--hidden
+
+        include includes/modal_quit.pug
+        include includes/modal_help.pug
+        include includes/modal_tasks.pug
+        
+        div( id="transition-overlay", class="transition-overlay--visible" )
+
+
+
+        include includes/footer.pug
+        script( type="text/javascript", src="js/map.js" )
