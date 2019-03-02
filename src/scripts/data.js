@@ -8,15 +8,15 @@ var data_template = {
     tasks: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], // 0-unseen, 1-seen, 2-submitted,correct, 3-submitted,wrong
     answers: {
         1:{
-            1:[],
+            1:null,
             2:null,
-            3:[]
+            3:null
         },
         2: {
-            1: []
+            1: null
         },
         3: {
-            1: []
+            1: null
         },
         4: {
             1: null
@@ -34,7 +34,18 @@ var data_template = {
             1: null
         },
         9: {
-            1: null
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: null,
+            7: null,
+            8: null,
+            9: null,
+            10: null,
+            11: null,
+            12: null
         },
         10: {
             1: null

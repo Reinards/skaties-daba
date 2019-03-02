@@ -1,14 +1,7 @@
 html
     include includes/header.pug
         
-    body( id="task", class="noScroll", data-task="7" data-task-type="1" )
-
-        div#blur-wrapper.blur--hidden
-            include includes/navbar.pug
-
-
-        include includes/modal_quit.pug
-        include includes/modal_help.pug
+    body( id="task", class="noScroll", data-task="9")
 
         span.task-hint
             | Pieskaries, lai turpinātu
@@ -17,32 +10,285 @@ html
             .info-container
                 .task-info
                     span.task-text.txt--justified
-                        | Grimonis ir košumkrūms, kas ir dekoratīvs un krāšņs dārza akcents gan vasarā, gan ziemā. Krūma krāsu klāsts ir ļoti plašs. Dzinumi parasti ir spilgti sarkani, bet tie mēdz būt arī dzeltenos un brūnos toņos. Lapas var būt sarkanas, balti vai dzelteni raibas un arī zaļganas.<br><br>
-                        | Vēsture stāsta, ka:<br>
-                        | • amerikāņu karavīri no grimoņu zaru mizas gatavojuši tēju, kas palīdzēja atvieglot sāpes un pazemināt temperatūru;<br>
-                        | • no stingrajiem krūma zariem senāk izgatavoja iesmus un bultas;<br>
-                        | • grimoņu kokogles savulaik esot bijušas labi piemērotas arī šaujampulvera izgatavošanai.<br><br>
-                        | Krūma latīniskais nosaukums "cornus" nozīmē "rags". Kāpēc krūmam tika dots teši šāds apzīmējums?
+                        | Dobē pie Cieceres upes dabas takas ir sastādīti 21  sugu ārstniecības augi. Te ir plaši pazīstami un katrā mājā lietoti augi, gan mazāk izplatītas augu sugas.
                         span.task-desc 
-                            | <i class="fas fa-tasks"></i>Izvēlies pareizo atbilžu variantu!
+                            | <i class="fas fa-tasks"></i>Savieno nosaukumu ar pareizo attēlu!
             
             .task-container.task-container--hidden
-                .task-type-2
-                    .top
-                        div( class="item item_1" data-item_id="1" ) 
-                            span.content Krūma krāsa ir līdzīga briežu ragu krāsai
-                            span.item_nr 1
-                        div( class="item item_2" data-item_id="2" ) 
-                            span.content Krūms pievilina bites un kukaiņus
-                            span.item_nr 2
-                        div( class="item item_3" data-item_id="3" ) 
-                            span.content Krūma zari ir cieti un izturīgi
-                            span.item_nr 3
-                        div( class="item item_4" data-item_id="4" ) 
-                            span.content Krūma augļus ir iecienījuši putni
-                            span.item_nr 4
+                .task-type-3.flowers
+                    span.wrapper-title Pelašķis
+                    .wrapper
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item1.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item5.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item7.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item3.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
 
-                    button( class="submit-task" data-task_id="7" ) Turpināt
+                    button( class="submit-task" data-task_id="9" ) Turpināt
+
+
+
+
+
+
+
+
+        .subtask.subtask_2.subtask--hidden            
+            .task-container
+                .task-type-3.flowers
+                    span.wrapper-title Kumelītes
+                    .wrapper
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item8.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item2.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_9" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item9.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item4.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+
+                    button( class="submit-task" data-task_id="9" ) Turpināt
+
+        
+
+
+        .subtask.subtask_3.subtask--hidden            
+            .task-container
+                .task-type-3.flowers
+                    span.wrapper-title Vīgrieze
+                    .wrapper
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item7.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item1.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item12.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item3.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+
+                    button( class="submit-task" data-task_id="9" ) Turpināt
+
+
+        
+
+
+        .subtask.subtask_4.subtask--hidden            
+            .task-container
+                .task-type-3.flowers
+                    span.wrapper-title Rudzupuķes
+                    .wrapper
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item4.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item5.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item9.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item8.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+
+                    button( class="submit-task" data-task_id="9" ) Turpināt
+
+        
+
+
+        .subtask.subtask_5.subtask--hidden            
+            .task-container
+                .task-type-3.flowers
+                    span.wrapper-title Mīkstais rasaskrēsliņš
+                    .wrapper
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item1.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item3.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item5.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item2.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+
+                    button( class="submit-task" data-task_id="9" ) Turpināt
+
+        
+
+        .subtask.subtask_6.subtask--hidden            
+            .task-container
+                .task-type-3.flowers
+                    span.wrapper-title Baziliks
+                    .wrapper
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item6.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item12.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item11.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item2.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+
+                    button( class="submit-task" data-task_id="9" ) Turpināt
+
+        
+
+
+        .subtask.subtask_7.subtask--hidden            
+            .task-container
+                .task-type-3.flowers
+                    span.wrapper-title Lavandas
+                    .wrapper
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item10.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item7.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item5.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item4.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+
+                    button( class="submit-task" data-task_id="9" ) Turpināt
+
+
+        
+
+        .subtask.subtask_8.subtask--hidden            
+            .task-container
+                .task-type-3.flowers
+                    span.wrapper-title Kliņģerītes
+                    .wrapper
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item2.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item1.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item12.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item8.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+
+                    button( class="submit-task" data-task_id="9" ) Turpināt
+
+        
+
+
+        .subtask.subtask_9.subtask--hidden            
+            .task-container
+                .task-type-3.flowers
+                    span.wrapper-title Piparmētra
+                    .wrapper
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item9.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item10.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item6.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item7.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+
+                    button( class="submit-task" data-task_id="9" ) Turpināt
+
+
+
+
+        .subtask.subtask_10.subtask--hidden            
+            .task-container
+                .task-type-3.flowers
+                    span.wrapper-title Kaķumētra
+                    .wrapper
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item10.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item3.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item5.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item12.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+
+                    button( class="submit-task" data-task_id="9" ) Turpināt
+
+        
+
+
+        .subtask.subtask_11.subtask--hidden            
+            .task-container
+                .task-type-3.flowers
+                    span.wrapper-title Gaiļbiksīte
+                    .wrapper
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item10.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item5.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item11.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item1.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+
+                    button( class="submit-task" data-task_id="9" ) Turpināt
+
+
+
+
+        .subtask.subtask_12.subtask--hidden            
+            .task-container
+                .task-type-3.flowers
+                    span.wrapper-title Deviņvīru spēks
+                    .wrapper
+                        div( class="img-item img-item_1" data-item_id="1" ) 
+                            img( src="img/tasks/9/img_item12.jpg" data-item-id="1" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_2" data-item_id="2" ) 
+                            img( src="img/tasks/9/img_item2.jpg" data-item-id="2" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_3" data-item_id="3" ) 
+                            img( src="img/tasks/9/img_item7.jpg" data-item-id="3" )
+                            span.img-overlay.img-overlay--hidden
+                        div( class="img-item img-item_4" data-item_id="4" ) 
+                            img( src="img/tasks/9/img_item9.jpg" data-item-id="4" )
+                            span.img-overlay.img-overlay--hidden
+
+                    button( class="submit-task" data-task_id="9" ) Turpināt
 
 
         div#screen-overlay.screen-overlay--hidden

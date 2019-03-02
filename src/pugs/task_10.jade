@@ -7,13 +7,6 @@ html
         include includes/modal_quit.pug
         include includes/modal_help.pug
 
-
-        .video-wrapper.video-wrapper--hidden
-            span.close-video
-                i( class="fas fa-times")
-            video( controls )
-                source( src="img/tasks/11/video_item1.mp4" type="video/mp4")
-
         span.task-hint
             | Pieskaries, lai turpinātu
 
@@ -21,19 +14,16 @@ html
             .info-container
                 .task-info
                     span.task-text.txt--justified
-                        button( class="watch-video-btn") Skatīties video
-                        | Visiem vīngliemežiem čaula ir savīta uz labo pusi. Uz vairākiem tūkstošiem gliemežu var gadīties atrast vienu tādu, kuram čaula savīta uz pretējo pusi. Šis īpatnis ieguvis nosaukumu „gliemežu ķēniņš”. Jau izšķiļoties no oliņas „gliemežu ķēniņa” čaula ir savīta uz kreiso pusi. Gliemezim augot lielākam, čaulas vijumi spirālveidīgi turpina veidoties uz kreiso pusi. „Gliemežu ķēniņs” ir interesanta dabas parādība, bieži to neizdodas sastapt.<br><br>
-                        | Tā kā gliemezis ir lēns, tas daudzām tautām simbolizē slinkumu un laiskumu.<br>
-                        | Gliemežu vidējais ātrums ir aptuveni 1,5 milimetri sekundē, tātad minūtē gliemezis spēj pārvarēt apmēram sešus centimetrus.<br><br>
-                        span.task-question Aprēķiniet, cik lielu attālumu gliemezis spēj pieveikt 1 stundas laikā?
+                        | Latvijā valriekstus audzē sen, Kurzemē šie koki periodiski ražo arī ēdamus augļus. Valrieksti ir ļoti garšīgi un kalorijām bagāti. Pēc kaloriju daudzuma tie neatpaliek no gaļas un olām. Valrieksti ļoti ātri bojājas, tāpēc jāuzmanās ar to uzglabāšanu. Lai pilnīgāk uzņemtu valriekstos esošās vērtīgās vielas, tos iesaka ēst kopā ar zaļajiem dārzeņiem un kārtīgi sakošļāt.ASV ar aptuveni 294 000 tonnām ieņem otro vietu valriekstu ražošanā pasaulē. <br><br>
+                        span.task-question Kura valsts ieņem pirmo vietu, saražojot 360 000 tonnas valriekstu gadā?
                         span.task-desc 
-                            | <i class="fas fa-tasks"></i>Ieraksti savu atbildi (metros)!
+                            | <i class="fas fa-tasks"></i>Ieraksti savu atbildi!
             
             .task-container.task-container--hidden
                 .task-type-5
                     .input-group
                         //- p.input-label Tava atbilde
-                        input(type="number" placeholder="Ieraksti tikai skaitli (metri)" class="task-input")
+                        input(type="text" placeholder="Ieraksti valsts nosaukumu" class="task-input")
 
                     button( class="submit-task" data-task_id="10" ) Turpināt
 

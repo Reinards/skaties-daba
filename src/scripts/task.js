@@ -10,9 +10,10 @@ var game_state = null;
 var current_subtask = 1;
 var current_selected_item = -1;
 
-var local_answers = new Array(10);
+var local_answers = new Array(15);
 
 var video_open = false;
+var selected_images_count = 0;
 
 exports.init = function(){
     
@@ -45,8 +46,7 @@ function setEvents(){
         video_open=false;
         $('.video-wrapper').addClass('video-wrapper--hidden');
     });
-    
-    
+
     $(".subtask .info-container").click(onInfoClicked);
     $('.item').click(onItemClicked);
     $('.img-item').click(function(){onImgItemClicked(this)});
@@ -58,25 +58,39 @@ function nextSubtask(){
     $('.subtask_'+current_subtask).fadeOut(function(){
         $(this).addClass('subtask--hidden');
     });
-        current_subtask++;
-        current_selected_item=-1;
-        local_answers = new Array();
-        $('.subtask_'+current_subtask).removeClass('subtask--hidden');
+
+    var quick = TaskDb.tasks[task_id]['quick']; // Should there be another info shown
+    current_subtask++;
+    current_selected_item=-1;
+    selected_images_count=0;
+    local_answers = new Array(15);
+    $('.subtask_'+current_subtask).removeClass('subtask--hidden');
+
+    if(!quick){
         $(V.task_hint).fadeIn();
+    }
 }
 
 function onSubmitTask(){
     var tmp_task_type = getTaskType();
     var subtask_count = TaskDb.tasks[task_id]['subtasks'];
+
+    if(selected_images_count<=0 && tmp_task_type===1) return;
+    if(selected_images_count<=0 && tmp_task_type===3) return;
+    if(selected_images_count<=0 && tmp_task_type===4) return;
     
     if(tmp_task_type === 2){
         local_answers = current_selected_item;
+
+
+        if(current_selected_item === -1) return;
     }
 
     // Input field
     if(tmp_task_type === 5){
         local_answers = $('.task-input').val();
         
+        if(local_answers.length === 0) return;
     }
 
     game_state.answers[task_id][current_subtask] = local_answers;
@@ -97,14 +111,16 @@ function onImgItemClicked(t){
     if(task_type===3){
         var item_id = t.dataset.item_id;
         
+        $('.subtask_'+current_subtask+' .img-item_'+item_id).toggleClass('img-item--selected');
         $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').toggleClass('img-overlay--hidden');
-        $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').html('*');
+        $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').html('<i class="fas fa-check"></i>');
         
         while(local_answers.length < item_id-1){
             local_answers.push(false);
         }
         local_answers[item_id-1] = !local_answers[item_id-1];
-        console.log(local_answers);
+        if(local_answers[item_id-1]===true) selected_images_count+=1;
+        else selected_images_count-=1;
     }else{
         var item_id = t.dataset.item_id;
         
@@ -114,10 +130,8 @@ function onImgItemClicked(t){
             $('.subtask_'+current_subtask+' .img-item_'+item_id).toggleClass('img-item--selected');
             $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').html(current_selected_item);
             $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').toggleClass('img-overlay--hidden');
-    
-            // while(local_answers.length < item_id){
-            //     local_answers.push();
-            // }
+            if(local_answers[item_id-1]===false) selected_images_count-=1;
+            else selected_images_count+=1;
             local_answers[item_id-1] = current_selected_item-1;
         }
     }
@@ -125,7 +139,7 @@ function onImgItemClicked(t){
 }
 
 function onItemClicked(){
-    if(current_selected_item == -1){
+    if(current_selected_item === -1){
         var item_id = $(this).data('item_id');
         current_selected_item = item_id;
         $('.subtask_'+current_subtask+' .item_'+current_selected_item).addClass('item--selected');
@@ -144,7 +158,6 @@ function onItemClicked(){
 }
 
 function onInfoClicked(){
-
     if(video_open) return;
 
     $('.subtask_'+current_subtask+' > .info-container').addClass('info-container--hidden');

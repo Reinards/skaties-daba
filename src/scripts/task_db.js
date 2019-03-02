@@ -9,6 +9,7 @@ var types_db = {
 exports.tasks = {
     1: {
         subtasks: 3,
+        quick: false,
         types: [
             types_db['connect_image_to_text'],
             types_db['choose_correct'],
@@ -58,9 +59,21 @@ exports.tasks = {
         ]
     },
     9: {
-        subtasks: 1,
+        subtasks: 12,
+        quick: true,
         types: [
-            types_db['type_answer']
+            types_db['choose_possible'],
+            types_db['choose_possible'],
+            types_db['choose_possible'],
+            types_db['choose_possible'],
+            types_db['choose_possible'],
+            types_db['choose_possible'],
+            types_db['choose_possible'],
+            types_db['choose_possible'],
+            types_db['choose_possible'],
+            types_db['choose_possible'],
+            types_db['choose_possible'],
+            types_db['choose_possible']
         ]
     },
     10: {
@@ -75,6 +88,24 @@ exports.tasks = {
             types_db['type_answer']
         ]
     },
+    12: {
+        subtasks: 1,
+        types: [
+            types_db['choose_correct']
+        ]
+    },
+    13: {
+        subtasks: 1,
+        types: [
+            types_db['choose_correct']
+        ]
+    },
+    14: {
+        subtasks: 1,
+        types: [
+            types_db['choose_possible']
+        ]
+    },
 }
 
 exports.answers = {
@@ -84,13 +115,13 @@ exports.answers = {
         3: [0,1,2,3,4,5,6]
     },
     2: {
-        1: [0,1,2]
+        1: [true,false,false,true]
     },
     3: {
         1: [0,1,2,3]
     },
     4: {
-        1: 0
+        1: 3
     },
     5: {
         1: 0
@@ -105,12 +136,35 @@ exports.answers = {
         1: 125000
     },
     9: {
-        1: 125000
+        1: [0],
+        2: [0],
+        3: [0],
+        4: [0],
+        5: [0],
+        6: [0],
+        7: [0],
+        8: [0],
+        9: [0],
+        10: [0],
+        11: [0],
+        12: [0]
     },
     10: {
-        1: 125000
+        1: "ķīna"
     },
     11: {
-        1: 125000
+        1: 5.4
     },
+    12: {
+        1: 3
+    },
+    13: {
+        1: 2
+    },
+    14: {
+        1: [false, false, false, true, false, false, true, false, false, false]
+    },
+    15: {
+        1: [0,1]
+    }
 }
