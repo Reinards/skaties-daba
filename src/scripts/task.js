@@ -12,6 +12,8 @@ var current_selected_item = -1;
 
 var local_answers = new Array(10);
 
+var video_open = false;
+
 exports.init = function(){
     
     game_state = Data.loadGameState();
@@ -33,6 +35,17 @@ function setEvents(){
     $(V.hide_help_modal_btn).click(function(){Helpers.hideModal(V.help_modal,'screen-overlay')});
     $(V.show_tasks_btn_id).click(function(){Helpers.showModal(V.tasks_modal,'screen-overlay')});
     $(V.hide_tasks_modal_btn).click(function(){Helpers.hideModal(V.tasks_modal,'screen-overlay')});
+
+    $('.watch-video-btn').click(function(){
+        video_open=true;
+        $('.video-wrapper').removeClass('video-wrapper--hidden');
+    });
+
+    $('.close-video').click(function(){
+        video_open=false;
+        $('.video-wrapper').addClass('video-wrapper--hidden');
+    });
+    
     
     $(".subtask .info-container").click(onInfoClicked);
     $('.item').click(onItemClicked);
@@ -60,6 +73,12 @@ function onSubmitTask(){
         local_answers = current_selected_item;
     }
 
+    // Input field
+    if(tmp_task_type === 5){
+        local_answers = $('.task-input').val();
+        
+    }
+
     game_state.answers[task_id][current_subtask] = local_answers;
     Data.saveGameState(game_state);
     
@@ -80,7 +99,7 @@ function onImgItemClicked(t){
         
         $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').toggleClass('img-overlay--hidden');
         $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').html('*');
-
+        
         while(local_answers.length < item_id-1){
             local_answers.push(false);
         }
@@ -88,13 +107,13 @@ function onImgItemClicked(t){
         console.log(local_answers);
     }else{
         var item_id = t.dataset.item_id;
-
+        
         if(current_selected_item !== -1){
-            alert("test works");
             console.log(current_subtask);
             console.log(current_selected_item);
-            $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').toggleClass('img-overlay--hidden');
+            $('.subtask_'+current_subtask+' .img-item_'+item_id).toggleClass('img-item--selected');
             $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').html(current_selected_item);
+            $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').toggleClass('img-overlay--hidden');
     
             // while(local_answers.length < item_id){
             //     local_answers.push();
@@ -125,6 +144,9 @@ function onItemClicked(){
 }
 
 function onInfoClicked(){
+
+    if(video_open) return;
+
     $('.subtask_'+current_subtask+' > .info-container').addClass('info-container--hidden');
     $(V.task_hint).fadeOut();
     setTimeout(function(){

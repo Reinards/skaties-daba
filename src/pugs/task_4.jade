@@ -1,10 +1,7 @@
 html
     include includes/header.pug
         
-    body( id="task", class="noScroll", data-task="4" data-task-type="1" )
-
-        div#blur-wrapper.blur--hidden
-            include includes/navbar.pug
+    body( id="task", class="noScroll", data-task="4" )
 
 
         include includes/modal_quit.pug
@@ -13,7 +10,7 @@ html
         span.task-hint
             | Pieskaries, lai turpinātu
 
-        .subtask.subtask_1
+        .subtask.subtask_1.subtask--scrollable
             .info-container
                 .task-info
                     span.task-text.txt--justified

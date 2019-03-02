@@ -39,13 +39,42 @@ exports.tasks = {
             types_db['choose_correct']
         ]
     },
-    6: {},
+    6: {
+        subtasks: 1,
+        types: [
+            types_db['type_answer']
+        ]
+    },
     7: {
         subtasks: 1,
         types: [
             types_db['choose_correct']
         ]
-    }
+    },
+    8: {
+        subtasks: 1,
+        types: [
+            types_db['type_answer']
+        ]
+    },
+    9: {
+        subtasks: 1,
+        types: [
+            types_db['type_answer']
+        ]
+    },
+    10: {
+        subtasks: 1,
+        types: [
+            types_db['type_answer']
+        ]
+    },
+    11: {
+        subtasks: 1,
+        types: [
+            types_db['type_answer']
+        ]
+    },
 }
 
 exports.answers = {
@@ -67,9 +96,21 @@ exports.answers = {
         1: 0
     },
     6: {
-
+        1: 2
     },
     7: {
         1: 3
-    }
+    },
+    8: {
+        1: 125000
+    },
+    9: {
+        1: 125000
+    },
+    10: {
+        1: 125000
+    },
+    11: {
+        1: 125000
+    },
 }

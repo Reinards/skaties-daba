@@ -1,14 +1,18 @@
 html
     include includes/header.pug
         
-    body( id="task", class="noScroll", data-task="7" data-task-type="1" )
-
-        div#blur-wrapper.blur--hidden
-            include includes/navbar.pug
+    body( id="task", class="noScroll", data-task="10"  )
 
 
         include includes/modal_quit.pug
         include includes/modal_help.pug
+
+
+        .video-wrapper.video-wrapper--hidden
+            span.close-video
+                i( class="fas fa-times")
+            video( controls )
+                source( src="img/tasks/11/video_item1.mp4" type="video/mp4")
 
         span.task-hint
             | Pieskaries, lai turpinātu
@@ -17,32 +21,21 @@ html
             .info-container
                 .task-info
                     span.task-text.txt--justified
-                        | Grimonis ir košumkrūms, kas ir dekoratīvs un krāšņs dārza akcents gan vasarā, gan ziemā. Krūma krāsu klāsts ir ļoti plašs. Dzinumi parasti ir spilgti sarkani, bet tie mēdz būt arī dzeltenos un brūnos toņos. Lapas var būt sarkanas, balti vai dzelteni raibas un arī zaļganas.<br><br>
-                        | Vēsture stāsta, ka:<br>
-                        | • amerikāņu karavīri no grimoņu zaru mizas gatavojuši tēju, kas palīdzēja atvieglot sāpes un pazemināt temperatūru;<br>
-                        | • no stingrajiem krūma zariem senāk izgatavoja iesmus un bultas;<br>
-                        | • grimoņu kokogles savulaik esot bijušas labi piemērotas arī šaujampulvera izgatavošanai.<br><br>
-                        | Krūma latīniskais nosaukums "cornus" nozīmē "rags". Kāpēc krūmam tika dots teši šāds apzīmējums?
+                        button( class="watch-video-btn") Skatīties video
+                        | Visiem vīngliemežiem čaula ir savīta uz labo pusi. Uz vairākiem tūkstošiem gliemežu var gadīties atrast vienu tādu, kuram čaula savīta uz pretējo pusi. Šis īpatnis ieguvis nosaukumu „gliemežu ķēniņš”. Jau izšķiļoties no oliņas „gliemežu ķēniņa” čaula ir savīta uz kreiso pusi. Gliemezim augot lielākam, čaulas vijumi spirālveidīgi turpina veidoties uz kreiso pusi. „Gliemežu ķēniņs” ir interesanta dabas parādība, bieži to neizdodas sastapt.<br><br>
+                        | Tā kā gliemezis ir lēns, tas daudzām tautām simbolizē slinkumu un laiskumu.<br>
+                        | Gliemežu vidējais ātrums ir aptuveni 1,5 milimetri sekundē, tātad minūtē gliemezis spēj pārvarēt apmēram sešus centimetrus.<br><br>
+                        span.task-question Aprēķiniet, cik lielu attālumu gliemezis spēj pieveikt 1 stundas laikā?
                         span.task-desc 
-                            | <i class="fas fa-tasks"></i>Izvēlies pareizo atbilžu variantu!
+                            | <i class="fas fa-tasks"></i>Ieraksti savu atbildi (metros)!
             
             .task-container.task-container--hidden
-                .task-type-2
-                    .top
-                        div( class="item item_1" data-item_id="1" ) 
-                            span.content Krūma krāsa ir līdzīga briežu ragu krāsai
-                            span.item_nr 1
-                        div( class="item item_2" data-item_id="2" ) 
-                            span.content Krūms pievilina bites un kukaiņus
-                            span.item_nr 2
-                        div( class="item item_3" data-item_id="3" ) 
-                            span.content Krūma zari ir cieti un izturīgi
-                            span.item_nr 3
-                        div( class="item item_4" data-item_id="4" ) 
-                            span.content Krūma augļus ir iecienījuši putni
-                            span.item_nr 4
+                .task-type-5
+                    .input-group
+                        //- p.input-label Tava atbilde
+                        input(type="number" placeholder="Ieraksti tikai skaitli (metri)" class="task-input")
 
-                    button( class="submit-task" data-task_id="7" ) Turpināt
+                    button( class="submit-task" data-task_id="10" ) Turpināt
 
 
         div#screen-overlay.screen-overlay--hidden

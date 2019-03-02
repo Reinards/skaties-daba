@@ -32,6 +32,13 @@ function setEvents(){
     $('#modal-'+V.tasks_modal+' .task_6').click(function(){Helpers.transitionTo('task_6');});
     $('#modal-'+V.tasks_modal+' .task_7').click(function(){Helpers.transitionTo('task_7');});
     $('#modal-'+V.tasks_modal+' .task_8').click(function(){Helpers.transitionTo('task_8');});
+    $('#modal-'+V.tasks_modal+' .task_9').click(function(){Helpers.transitionTo('task_9');});
+    $('#modal-'+V.tasks_modal+' .task_10').click(function(){Helpers.transitionTo('task_10');});
+    $('#modal-'+V.tasks_modal+' .task_11').click(function(){Helpers.transitionTo('task_11');});
+    $('#modal-'+V.tasks_modal+' .task_12').click(function(){Helpers.transitionTo('task_12');});
+    $('#modal-'+V.tasks_modal+' .task_13').click(function(){Helpers.transitionTo('task_13');});
+    $('#modal-'+V.tasks_modal+' .task_14').click(function(){Helpers.transitionTo('task_14');});
+    $('#modal-'+V.tasks_modal+' .task_15').click(function(){Helpers.transitionTo('task_15');});
 }
 
 function handleTaskModal(){

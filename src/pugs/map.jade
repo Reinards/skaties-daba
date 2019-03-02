@@ -5,11 +5,14 @@ html
         
         div#blur-wrapper.blur--hidden
             include includes/navbar.pug
+                
+
+            span.orientation-test Screen orientation is
     
             div#map-wrapper
                 img( src="img/arrow.svg" class="map__arrow" )
-                .map__radius--small
-                .map__radius--big
+                //- .map__radius--small
+                img( src="img/coords.svg" class="map__coords" )
 
         div#screen-overlay.screen-overlay--hidden
 
@@ -22,4 +25,4 @@ html
 
 
         include includes/footer.pug
-        script( type="text/javascript", src="js/map.js" )
+        //- script( type="text/javascript", src="js/map.js" )

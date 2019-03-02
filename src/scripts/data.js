@@ -25,11 +25,35 @@ var data_template = {
             1: null
         },
         6: {
-            1: []
+            1: null
         },
         7: {
             1: null
-        }
+        },
+        8: {
+            1: null
+        },
+        9: {
+            1: null
+        },
+        10: {
+            1: null
+        },
+        11: {
+            1: null
+        },
+        12: {
+            1: null
+        },
+        13: {
+            1: null
+        },
+        14: {
+            1: null
+        },
+        15: {
+            1: null
+        },
     },
 }
 

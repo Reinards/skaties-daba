@@ -1,10 +1,7 @@
 html
     include includes/header.pug
         
-    body( id="task", class="noScroll", data-task="7" data-task-type="1" )
-
-        div#blur-wrapper.blur--hidden
-            include includes/navbar.pug
+    body( id="task", class="noScroll", data-task="8"  )
 
 
         include includes/modal_quit.pug
@@ -17,32 +14,21 @@ html
             .info-container
                 .task-info
                     span.task-text.txt--justified
-                        | Grimonis ir košumkrūms, kas ir dekoratīvs un krāšņs dārza akcents gan vasarā, gan ziemā. Krūma krāsu klāsts ir ļoti plašs. Dzinumi parasti ir spilgti sarkani, bet tie mēdz būt arī dzeltenos un brūnos toņos. Lapas var būt sarkanas, balti vai dzelteni raibas un arī zaļganas.<br><br>
-                        | Vēsture stāsta, ka:<br>
-                        | • amerikāņu karavīri no grimoņu zaru mizas gatavojuši tēju, kas palīdzēja atvieglot sāpes un pazemināt temperatūru;<br>
-                        | • no stingrajiem krūma zariem senāk izgatavoja iesmus un bultas;<br>
-                        | • grimoņu kokogles savulaik esot bijušas labi piemērotas arī šaujampulvera izgatavošanai.<br><br>
-                        | Krūma latīniskais nosaukums "cornus" nozīmē "rags". Kāpēc krūmam tika dots teši šāds apzīmējums?
+                        img( class="task-img task-img--no-shadow" src="img/tasks/8/info_item1.jpg")
+                        | Lapegles ir sastopamas tikai ziemeļu puslodē. Atšķirībā no citiem skujkokiem, lapegles rudenī un ziemā nomet skujas. Lapegļu koksne ir vērtīga. To izmanto laivu būvēšanā. Latvijā aug vienīgi Eiropas lapegle. Lapegles mūža ilgums var sasniegt 600 gadu.<br><br>
+                        | Lapegļu sēklas ir ~3mm garš riekstiņš.<br>
+                        | Šajā attēlā tās ir attēlotas palielinātas.<br><br>
+                        span.task-question Cik 1 kilogramā aptuveni ir lapegļu sēklu?
                         span.task-desc 
-                            | <i class="fas fa-tasks"></i>Izvēlies pareizo atbilžu variantu!
+                            | <i class="fas fa-tasks"></i>Ieraksti savu atbildi!
             
             .task-container.task-container--hidden
-                .task-type-2
-                    .top
-                        div( class="item item_1" data-item_id="1" ) 
-                            span.content Krūma krāsa ir līdzīga briežu ragu krāsai
-                            span.item_nr 1
-                        div( class="item item_2" data-item_id="2" ) 
-                            span.content Krūms pievilina bites un kukaiņus
-                            span.item_nr 2
-                        div( class="item item_3" data-item_id="3" ) 
-                            span.content Krūma zari ir cieti un izturīgi
-                            span.item_nr 3
-                        div( class="item item_4" data-item_id="4" ) 
-                            span.content Krūma augļus ir iecienījuši putni
-                            span.item_nr 4
+                .task-type-5
+                    .input-group
+                        //- p.input-label Tava atbilde
+                        input(type="number" placeholder="Ieraksti tikai skaitli" class="task-input")
 
-                    button( class="submit-task" data-task_id="7" ) Turpināt
+                    button( class="submit-task" data-task_id="8" ) Turpināt
 
 
         div#screen-overlay.screen-overlay--hidden
