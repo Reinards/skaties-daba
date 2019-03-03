@@ -18,7 +18,7 @@ exports.init = function (){
 function setEvents(){
     $(V.quit_game_btn_id).click(function(){Helpers.showModal(V.quit_modal,'screen-overlay')});
     $(V.show_help_btn_id).click(function(){Helpers.showModal(V.help_modal,'screen-overlay')});
-    $(V.confirm_and_quit_btn).click(function(){Helpers.transitionTo("index")});
+    $(V.confirm_and_quit_btn).click(function(){Helpers.transitionTo("answers")});
     $(V.hide_quit_modal_btn).click(function(){Helpers.hideModal(V.quit_modal,'screen-overlay')});
     $(V.hide_help_modal_btn).click(function(){Helpers.hideModal(V.help_modal,'screen-overlay')});
     $(V.show_tasks_btn_id).click(function(){Helpers.showModal(V.tasks_modal,'screen-overlay')});

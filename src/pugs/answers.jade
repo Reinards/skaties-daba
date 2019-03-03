@@ -1,25 +1,31 @@
 html
     include includes/header.pug
 
-    body( id="map", class="noScroll" )
+    body( id="answers" )
         
-        div#blur-wrapper.blur--hidden
-            include includes/navbar.pug
-    
-            div#map-wrapper
-                img( src="img/arrow.svg" class="map__arrow" )
-                .map__radius--small
-                .map__radius--big
+        h1 Tavas atbildes
+
+        .answers_wrapper
+            //- .task.task_1
+            //-     h2 1
+            //-     .subtasks
+            //-         .subtask.subtask1
+            //-             span.subtask_nr 1
+            //-             .subtask_answers 1,2,3
+            //-         .subtask.subtask1
+            //-             span.subtask_nr 2
+            //-             .subtask_answers 2
+            //-         .subtask.subtask1
+            //-             span.subtask_nr 3
+            //-             .subtask_answers 1,2,3,4,5,6,7
+
+        
 
         div#screen-overlay.screen-overlay--hidden
 
-        include includes/modal_quit.pug
-        include includes/modal_help.pug
-        include includes/modal_tasks.pug
         
         div( id="transition-overlay", class="transition-overlay--visible" )
 
 
 
         include includes/footer.pug
-        script( type="text/javascript", src="js/map.js" )

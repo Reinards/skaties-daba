@@ -78,16 +78,16 @@ function nextSubtask(){
 }
 
 function onSubmitTask(){
+    var subtask_count = TaskDb.tasks[task_id]['subtasks'];    
     var tmp_task_type = getTaskType();
-    var subtask_count = TaskDb.tasks[task_id]['subtasks'];
 
     if(selected_images_count<=0 && tmp_task_type===1) return;
     if(selected_images_count<=0 && tmp_task_type===3) return;
     if(selected_images_count<=0 && tmp_task_type===4) return;
     
+
     if(tmp_task_type === 2){
         local_answers = current_selected_item;
-
 
         if(current_selected_item === -1) return;
     }
@@ -99,16 +99,54 @@ function onSubmitTask(){
         if(local_answers.length === 0) return;
     }
 
-    game_state.answers[task_id][current_subtask] = local_answers;
-    Data.saveGameState(game_state);
-    
-    if(subtask_count-current_subtask > 0){
-        nextSubtask();
-    }else{
-        game_state.tasks[task_id-1]=1;
+
+    if(tmp_task_type === 2 || tmp_task_type === 5){
+        // No converting needed, use raw local_answers array
+
+        game_state.answers[task_id][current_subtask] = local_answers;
         Data.saveGameState(game_state);
-        Helpers.transitionTo('map');
+        
+        if(subtask_count-current_subtask > 0){
+            nextSubtask();
+        }else{
+            game_state.tasks[task_id-1]=1;
+            Data.saveGameState(game_state);
+            Helpers.transitionTo('map');
+        }
+        return;
     }
+
+    
+    if(tmp_task_type === 1){
+        var answer_array = new Array();
+        
+        for(var i=0;i<local_answers.length;i++){
+            var dataContent = $('.img_'+current_subtask+"_"+(i+1)).data("cont");
+            var dataContent2 = $('.subtask_'+current_subtask+" .item_"+(local_answers[i]+1)+" .content").html();
+
+            console.log(dataContent);
+            console.log(dataContent2);
+            if(typeof dataContent === "string"){
+                answer_array.push(dataContent+": "+dataContent2);
+            }else{
+                break;
+            }
+        }
+        
+        game_state.answers[task_id][current_subtask] = answer_array;
+        Data.saveGameState(game_state);
+        
+        if(subtask_count-current_subtask > 0){
+            nextSubtask();
+        }else{
+            game_state.tasks[task_id-1]=1;
+            Data.saveGameState(game_state);
+            Helpers.transitionTo('map');
+        }
+        return;
+    }
+
+
 }
 
 function onImgItemClicked(t){
@@ -149,15 +187,15 @@ function onImgItemClicked(t){
         }
         
     }else{
+        var img = $()
         var item_id = t.dataset.item_id;
         
         if(current_selected_item !== -1){
-            console.log(current_subtask);
-            console.log(current_selected_item);
+
             $('.subtask_'+current_subtask+' .img-item_'+item_id).toggleClass('img-item--selected');
             $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').html(current_selected_item);
             $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').toggleClass('img-overlay--hidden');
-            if(local_answers[item_id-1]===false) selected_images_count-=1;
+            if(local_answers[item_id-1]===true) selected_images_count-=1;
             else selected_images_count+=1;
             local_answers[item_id-1] = current_selected_item-1;
         }
