@@ -21,6 +21,9 @@ exports.init = function(){
     var tmp_body = document.querySelector('#task');
     task_id = tmp_body.dataset.task;
     task = TaskDb.tasks[task_id];
+    for(var i=0;i<15;i++){
+        local_answers[i]=false;
+    }
 
     setEvents();
 
@@ -64,6 +67,9 @@ function nextSubtask(){
     current_selected_item=-1;
     selected_images_count=0;
     local_answers = new Array(15);
+    for(var i=0;i<15;i++){
+        local_answers[i]=false;
+    }
     $('.subtask_'+current_subtask).removeClass('subtask--hidden');
 
     if(!quick){
@@ -110,17 +116,38 @@ function onImgItemClicked(t){
     
     if(task_type===3){
         var item_id = t.dataset.item_id;
+        var limit = TaskDb.tasks[task_id]['limit'];
         
-        $('.subtask_'+current_subtask+' .img-item_'+item_id).toggleClass('img-item--selected');
-        $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').toggleClass('img-overlay--hidden');
-        $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').html('<i class="fas fa-check"></i>');
+        if(limit>0){
+            
+            if(local_answers[item_id-1]===false && selected_images_count+1 <=limit){
+                $('.subtask_'+current_subtask+' .img-item_'+item_id).toggleClass('img-item--selected');
+                $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').toggleClass('img-overlay--hidden');
+                $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').html('<i class="fas fa-check"></i>');
+                local_answers[item_id-1] = !local_answers[item_id-1];
+                if(local_answers[item_id-1]===true) selected_images_count+=1;
+                else selected_images_count-=1;
+
+            }else if(local_answers[item_id-1]===true){
+
+                $('.subtask_'+current_subtask+' .img-item_'+item_id).toggleClass('img-item--selected');
+                $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').toggleClass('img-overlay--hidden');
+                $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').html('<i class="fas fa-check"></i>');
+                local_answers[item_id-1] = !local_answers[item_id-1];
+                if(local_answers[item_id-1]===true) selected_images_count+=1; 
+                else selected_images_count-=1;
+
+            }
+        }else{
+            $('.subtask_'+current_subtask+' .img-item_'+item_id).toggleClass('img-item--selected');
+            $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').toggleClass('img-overlay--hidden');
+            $('.subtask_'+current_subtask+' .img-item_'+item_id+' .img-overlay').html('<i class="fas fa-check"></i>');
         
-        while(local_answers.length < item_id-1){
-            local_answers.push(false);
+            local_answers[item_id-1] = !local_answers[item_id-1];
+            if(local_answers[item_id-1]===true) selected_images_count+=1;
+            else selected_images_count-=1;
         }
-        local_answers[item_id-1] = !local_answers[item_id-1];
-        if(local_answers[item_id-1]===true) selected_images_count+=1;
-        else selected_images_count-=1;
+        
     }else{
         var item_id = t.dataset.item_id;
         

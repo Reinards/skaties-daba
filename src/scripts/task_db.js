@@ -18,6 +18,7 @@ exports.tasks = {
     },
     2: {
         subtasks: 1,
+        limit: -1,
         types: [
             types_db['choose_possible']
         ]
@@ -61,6 +62,7 @@ exports.tasks = {
     9: {
         subtasks: 12,
         quick: true,
+        limit: 1,
         types: [
             types_db['choose_possible'],
             types_db['choose_possible'],
@@ -102,6 +104,14 @@ exports.tasks = {
     },
     14: {
         subtasks: 1,
+        limit: -1,
+        types: [
+            types_db['choose_possible']
+        ]
+    },
+    15: {
+        subtasks: 1,
+        limit: 1,
         types: [
             types_db['choose_possible']
         ]
