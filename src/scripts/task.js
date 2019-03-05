@@ -146,6 +146,35 @@ function onSubmitTask(){
         return;
     }
 
+    if(tmp_task_type === 3){
+        var answer_array = new Array();
+
+        for(var i=0;i<local_answers.length;i++){
+            if(local_answers[i]){
+                var dataContent = $('.img_'+current_subtask+"_"+(i+1)).data("cont");
+    
+                if(typeof dataContent === "string"){
+                    answer_array.push(dataContent);
+                }else{
+                    break;
+                }
+            }
+        }
+
+        game_state.answers[task_id][current_subtask] = answer_array;
+        Data.saveGameState(game_state);
+        
+        if(subtask_count-current_subtask > 0){
+            nextSubtask();
+        }else{
+            game_state.tasks[task_id-1]=1;
+            Data.saveGameState(game_state);
+            Helpers.transitionTo('map');
+        }
+        return;
+
+    }
+
 
 }
 
@@ -185,7 +214,6 @@ function onImgItemClicked(t){
             if(local_answers[item_id-1]===true) selected_images_count+=1;
             else selected_images_count-=1;
         }
-        
     }else{
         var img = $()
         var item_id = t.dataset.item_id;

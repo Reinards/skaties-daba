@@ -48,14 +48,19 @@ function getAnswersString(answers, answer_key, subtasks, subtask_key){
     var return_string = "";
 
     if(task_type === 2){
-        return_string+="Atbildes numurs: "+answers_item;
+        return_string+="Atbildes numurs: "+(answers_item===null?"-":answers_item);
     }else if(task_type === 5){
-        return_string+="Tu ierakstīji: "+answers_item;
+        return_string+="Tu ierakstīji: "+(answers_item===null?"-":answers_item);
     }else if(task_type === 1){
         for(i in answers_item){
-            return_string +=answers_item[i]+" <br>";
+            return_string += answers_item[i]+" <br>";
         }
         // console.log(answers_item);
+    }else if(task_type === 3){
+        // console.log(typeof answers_item);
+        for(i in answers_item){
+            return_string += answers_item[i]+(i==="null"?"":"<br>");
+        }
     }else{
         return "-";
     }
