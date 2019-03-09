@@ -2,3 +2,12 @@
 @import 'variables';
 @import 'helpers';
 @import 'sections';
+
+
+#home,#task,#map{
+    overflow: hidden !important;
+}
+
+#task{
+    max-height: 100vh;
+}
