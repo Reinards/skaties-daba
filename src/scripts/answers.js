@@ -16,6 +16,11 @@ exports.init = function (){
 }
 
 function setEvents(){
+    // alert("a");
+    $(".answers-btn").click(function(){
+        // alert("t");
+        Helpers.transitionTo("index");
+    });
 
 }
 

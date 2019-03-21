@@ -76,7 +76,7 @@
 // ========================================= TRANSITION
 
 .transition-overlay{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: $z-transition;
@@ -88,7 +88,7 @@
 }
 
 .transition-overlay--visible{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: $z-transition;
@@ -456,6 +456,31 @@
     *:focus, &:active{ 
         outline: 0;
         background-image: linear-gradient(to right, lighten($gradient-end,10), lighten($gradient-begin,10));
+    }
+}
+
+.answers-btn{
+    // position: absolute;
+    // bottom: 2vw;
+    // left: 2vw;
+    width: 100%;
+    height: auto;
+    padding: 2vw 4vw;
+    text-align: center;
+    color: $gradient-begin;
+    box-sizing: border-box;
+    background-color: white;
+    border: none;
+    font-size: 1.2em;
+    border-radius: 4px;
+    outline: 0;
+    display: block;
+    font-family: $font-secondary;
+    text-decoration: none;
+
+    *:focus, &:active{ 
+        outline: 0;
+        background-color: rgb(237, 240, 246);
     }
 }
 
@@ -947,6 +972,10 @@
 
     span{
         line-height: 400px;
+    }
+
+    .wrapper2{
+        position: relative;
     }
 }
 
