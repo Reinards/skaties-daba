@@ -1,7 +1,7 @@
 html
     include includes/header.pug
         
-    body( id="task", class="noScroll", data-task="12" )
+    body( id="task", class="noScroll", data-task="12" data-location="4" )
 
 
         include includes/modal_quit.pug
@@ -23,11 +23,10 @@ html
                         button( class="watch-video-btn") Skatīties video
                         | Parastā mitrene ir dzīvei laukos pielāgojies vēžveidīgais dzīvnieks, nevis kukainis. Uzturas ēnainās, mitrās vietās, zem akmeņiem, dēļiem, citiem priekšmetiem dārzos, parkos, siltumnīcās un citās būvēs. Barojas ar atmirušām organiskajām vielām, un dabā tai ir „aizvācēja“ funkcija. Cilvēku iekoptā vidē parastā mitrene barojas arī ar dārzeņiem, augļiem un kartupeļiem.<br>
                         | Viena no pazīmēm, ka mitrene nav kukainis ir kāju skaits. Tai ir 7 kāju pāri, tātad 14 kājas.<br><br>
-                        span.task-question Cik kāju ir kukainim?
-                        span.task-desc 
-                            | <i class="fas fa-tasks"></i>Izvēlies pareizo atbilžu variantu!
             
             .task-container.task-container--hidden
+                .task-info-late.txt--centered.task-info-single
+                    span.task-question Cik kāju ir kukainim?
                 .task-type-2
                     .top
                         div( class="item item_1" data-item_id="1" ) 

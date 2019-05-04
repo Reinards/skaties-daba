@@ -4,6 +4,7 @@ var Helpers = require('./helpers.js');
 var TaskDb = require('./task_db.js');
 
 var game_state = null;
+var resetOn = true;
 
 exports.init = function (){
 
@@ -18,7 +19,11 @@ exports.init = function (){
 function setEvents(){
     // alert("a");
     $(".answers-btn").click(function(){
-        // alert("t");
+        
+        if(resetOn){
+            localStorage.removeItem("game_state");
+        }
+
         Helpers.transitionTo("index");
     });
 
@@ -30,8 +35,10 @@ function loadAnswers(){
 
     for(var answer_key=1; answer_key<=15; answer_key++){
 
-        var subtasks = TaskDb.tasks[answer_key]['subtasks'];
-        var types = TaskDb.tasks[answer_key]['types'];
+        var task_id = TaskDb.locations[answer_key]["task_id"];
+        // console.log("ID: "+task_id);
+        var subtasks = TaskDb.tasks[task_id]['subtasks'];
+        var types = TaskDb.tasks[task_id]['types'];
 
         $(".answers_wrapper").append("<div class='task task"+answer_key+"'><h2>"+answer_key+"</h2></div>");
         
@@ -40,7 +47,7 @@ function loadAnswers(){
         for(var subtask_key = 1; subtask_key<=types.length; subtask_key++){
             $(".task"+answer_key+" .subtasks").append("<div class='subtask subtask"+subtask_key+"'><span class='subtask_nr'>"+subtask_key+"</span></div>");
 
-            $(".task"+answer_key+" .subtasks .subtask"+subtask_key).append("<div class='subtask_answers'>"+getAnswersString(answers,answer_key,subtasks,subtask_key)+"</div>");
+            $(".task"+answer_key+" .subtasks .subtask"+subtask_key).append("<div class='subtask_answers'>"+getAnswersString(answers,task_id,subtasks,subtask_key)+"</div>");
         }
 
 
@@ -53,7 +60,7 @@ function getAnswersString(answers, answer_key, subtasks, subtask_key){
     var return_string = "";
 
     if(task_type === 2){
-        return_string+="Atbildes numurs: "+(answers_item===null?"-":answers_item);
+        return_string+="Tu izvēlējies: "+(answers_item===null?"-":answers_item);
     }else if(task_type === 5){
         return_string+="Tu ierakstīji: "+(answers_item===null?"-":answers_item);
     }else if(task_type === 1){

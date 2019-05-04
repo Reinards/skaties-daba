@@ -1,7 +1,7 @@
 html
     include includes/header.pug
         
-    body( id="task", class="noScroll", data-task="10"  )
+    body( id="task", class="noScroll", data-task="10" data-location="3" )
 
 
         include includes/modal_quit.pug
@@ -20,13 +20,12 @@ html
                         img(src="img/tasks/10/img_item4.jpg" class="img--styled")
                     span.task-text.txt--justified
                         | Latvijā valriekstus audzē sen, Kurzemē šie koki periodiski ražo arī ēdamus augļus. Valrieksti ir ļoti garšīgi un kalorijām bagāti. Pēc kaloriju daudzuma tie neatpaliek no gaļas un olām. Valrieksti ļoti ātri bojājas, tāpēc jāuzmanās ar to uzglabāšanu.<br><br>
-                        | Lai pilnīgāk uzņemtu valriekstos esošās vērtīgās vielas, tos iesaka ēst kopā ar zaļajiem dārzeņiem un kārtīgi sakošļāt.ASV ar aptuveni 294 000 tonnām ieņem otro vietu valriekstu ražošanā pasaulē. <br><br>
-                        span.task-question Kura valsts ieņem pirmo vietu, saražojot 360 000 tonnas valriekstu gadā?
-                        span.task-desc 
-                            | <i class="fas fa-tasks"></i>Ieraksti savu atbildi!
+                        | Lai pilnīgāk uzņemtu valriekstos esošās vērtīgās vielas, tos iesaka ēst kopā ar zaļajiem dārzeņiem un kārtīgi sakošļāt. ASV ar aptuveni 294 000 tonnām ieņem otro vietu valriekstu ražošanā pasaulē. <br><br>
             
             .task-container.task-container--hidden
                 .task-type-5
+                    .info
+                        span.task-question Kura valsts ieņem pirmo vietu, saražojot 360 000 tonnas valriekstu gadā?
                     .input-group
                         //- p.input-label Tava atbilde
                         input(type="text" placeholder="Ieraksti valsts nosaukumu" class="task-input")

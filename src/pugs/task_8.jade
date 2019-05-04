@@ -1,7 +1,7 @@
 html
     include includes/header.pug
         
-    body( id="task", class="noScroll", data-task="8"  )
+    body( id="task", class="noScroll", data-task="8" data-location="9" )
 
 
         include includes/modal_quit.pug
@@ -16,14 +16,14 @@ html
                     span.task-text.txt--justified
                         img( class="task-img task-img--no-shadow" src="img/tasks/8/info_item1.jpg")
                         | Lapegles ir sastopamas tikai ziemeļu puslodē. Atšķirībā no citiem skujkokiem, lapegles rudenī un ziemā nomet skujas. Lapegļu koksne ir vērtīga. To izmanto laivu būvēšanā. Latvijā aug vienīgi Eiropas lapegle. Lapegles mūža ilgums var sasniegt 600 gadu.<br><br>
-                        | Lapegļu sēklas ir ~3mm garš riekstiņš.<br>
-                        | Šajā attēlā tās ir attēlotas palielinātas.<br><br>
-                        span.task-question Cik 1 kilogramā aptuveni ir lapegļu sēklu?
-                        span.task-desc 
-                            | <i class="fas fa-tasks"></i>Ieraksti savu atbildi!
-            
+                        
             .task-container.task-container--hidden
                 .task-type-5
+                    .info.txt--centered
+                        img( class="task-img task-img--no-shadow" src="img/tasks/8/info_item2.jpg")
+                        | Lapegļu sēklas ir ~3mm garš riekstiņš.<br>
+                        | Šajā attēlā tās ir attēlotas palielinātas.<br>
+                        span.task-question Cik 1 kilogramā aptuveni ir lapegļu sēklu?
                     .input-group
                         //- p.input-label Tava atbilde
                         input(type="number" placeholder="Ieraksti tikai skaitli" class="task-input")

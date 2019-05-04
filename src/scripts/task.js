@@ -5,6 +5,7 @@ var TaskDb = require('./task_db.js');
 
 var task_id = 0;
 var task = null;
+var task_location = null;
 var game_state = null;
 
 var current_subtask = 1;
@@ -20,6 +21,7 @@ exports.init = function(){
     game_state = Data.loadGameState();
     var tmp_body = document.querySelector('#task');
     task_id = tmp_body.dataset.task;
+    task_location = tmp_body.dataset.location;
     task = TaskDb.tasks[task_id];
     for(var i=0;i<15;i++){
         local_answers[i]=false;
@@ -47,6 +49,7 @@ function setEvents(){
 
     $('.close-video').click(function(){
         video_open=false;
+        $("video").get(0).pause();
         $('.video-wrapper').addClass('video-wrapper--hidden');
     });
 
@@ -78,6 +81,7 @@ function nextSubtask(){
 }
 
 function onSubmitTask(){
+    // alert(task_location);
     var subtask_count = TaskDb.tasks[task_id]['subtasks'];    
     var tmp_task_type = getTaskType();
 
@@ -87,7 +91,7 @@ function onSubmitTask(){
     
 
     if(tmp_task_type === 2){
-        local_answers = current_selected_item;
+        local_answers = $(".item_"+current_selected_item+" .content").html();
 
         if(current_selected_item === -1) return;
     }
@@ -109,7 +113,7 @@ function onSubmitTask(){
         if(subtask_count-current_subtask > 0){
             nextSubtask();
         }else{
-            game_state.tasks[task_id-1]=1;
+            game_state.tasks[task_location]=1;
             Data.saveGameState(game_state);
             Helpers.transitionTo('map');
         }
@@ -139,7 +143,7 @@ function onSubmitTask(){
         if(subtask_count-current_subtask > 0){
             nextSubtask();
         }else{
-            game_state.tasks[task_id-1]=1;
+            game_state.tasks[task_location]=1;
             Data.saveGameState(game_state);
             Helpers.transitionTo('map');
         }
@@ -167,7 +171,7 @@ function onSubmitTask(){
         if(subtask_count-current_subtask > 0){
             nextSubtask();
         }else{
-            game_state.tasks[task_id-1]=1;
+            game_state.tasks[task_location]=1;
             Data.saveGameState(game_state);
             Helpers.transitionTo('map');
         }

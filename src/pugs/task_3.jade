@@ -1,7 +1,7 @@
 html
     include includes/header.pug
         
-    body( id="task", class="noScroll", data-task="3")
+    body( id="task", class="noScroll", data-task="3" data-location="14")
 
 
         include includes/modal_quit.pug
@@ -14,7 +14,9 @@ html
             .info-container
                 .task-info
                     span.task-text.txt--justified
-                        | Etiķkoks - Auga nosaukumā etiķa klātbūtne nav nejaušība, jo auga ievainojuma vietās izdalās bieza, dzeltenīgas krāsas piensula, kura ir intensīvi sīva, un tāpēc arī augs iemantojis tieši tādu nosaukumu.<br> Koks ir ļoti dekoratīvs, labi izskatās jebkurā gadalaikā, tāpēc tas ir ļoti iecienīts gan privātos, gan publiskos apstādījumos.
+                        img( class="task-img" src="img/tasks/3/info_item1.jpg")
+                        span.info-img-title Etiķkoks<br><br>
+                        | Auga nosaukumā etiķa klātbūtne nav nejaušība, jo auga ievainojuma vietās izdalās bieza, dzeltenīgas krāsas piensula, kura ir intensīvi sīva, un tāpēc arī augs iemantojis tieši tādu nosaukumu.<br> Koks ir ļoti dekoratīvs, labi izskatās jebkurā gadalaikā, tāpēc tas ir ļoti iecienīts gan privātos, gan publiskos apstādījumos.
                         span.task-desc 
                             | <i class="fas fa-tasks"></i>Sarindo attēlus pareizā secībā, sākot ar pavasari!
             

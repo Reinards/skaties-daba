@@ -1,7 +1,7 @@
 html
     include includes/header.pug
         
-    body( id="task", class="noScroll", data-task="4" )
+    body( id="task", class="noScroll", data-task="4" data-location="13" )
 
 
         include includes/modal_quit.pug
@@ -14,22 +14,21 @@ html
             .info-container
                 .task-info
                     span.task-text.txt--justified
-                        | Niedre ir ļoti audzelīgs un agresīvs ūdensaugs - ņokļuvusi augšanai labvēlīgā teritorijā, pilnībā izspiež citus augus. Taču tās ir ekosistēmas daļa, kas pilda savu dabas doto uzdevumu -  attīra ūdeni un dod pajumti putniem un kukaiņiem. <br> Cilvēks ir iemācījies niedres izmantot savām vajadzībām. No tām var izgatavot:
+                        | Niedre ir ļoti audzelīgs un agresīvs ūdensaugs - ņokļuvusi augšanai labvēlīgā teritorijā, pilnībā izspiež citus augus. Taču tā ir ekosistēmas daļa, kas pilda savu dabas doto uzdevumu -  attīra ūdeni un dod pajumti putniem un kukaiņiem. <br> Cilvēks ir iemācījies niedres izmantot savām vajadzībām. No tām var izgatavot:
                         .custom-grid-1
                             .item
                                 img( src="img/tasks/4/info_item1.jpg" class="img--styled")
-                                span Jumtus
+                                span jumtus
                             .item
                                 img( src="img/tasks/4/info_item2.jpg" class="img--styled")
-                                span Žogus
+                                span žogus
                             .item
                                 img( src="img/tasks/4/info_item3.jpg" class="img--styled")
-                                span Puzurus
-                        span.task-question Kā vēl var izmantot niedres?
-                        span.task-desc 
-                            | <i class="fas fa-tasks"></i>Izvēlies pareizo atbilžu variantu!
+                                span puzurus
             
             .task-container.task-container--hidden
+                .task-info-late.txt--centered.task-info-single
+                    span.task-question Kā vēl var izmantot niedres?
                 .task-type-2
                     .top
                         div( class="item item_1" data-item_id="1" ) 

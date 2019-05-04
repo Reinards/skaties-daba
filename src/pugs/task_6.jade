@@ -1,7 +1,7 @@
 html
     include includes/header.pug
         
-    body( id="task", class="noScroll", data-task="6"  )
+    body( id="task", class="noScroll", data-task="6" data-location="11" )
 
 
         include includes/modal_quit.pug
@@ -14,14 +14,15 @@ html
             .info-container
                 .task-info
                     span.task-text.txt--justified
-                        img( class="task-img task-img--no-shadow" src="img/tasks/6/info_item1.png" style="max-width")
+                        img( class="task-img" src="img/tasks/6/gulbis.jpg" style="max-width")
                         | Paugurknābja gulbis ir vispazīstamākā gulbju suga pasaulē, jo viegli vairojas nebrīvē un daudzās valstīs tiek turēta kā parku putns. Latvijā ligzdo 800 – 1000 pāri. Tā spārnu izpletums ir 200-240 cm.  Salīdzinot ar citiem gulbjiem, paugurknābja gulbji ir klusi. Tie ir smagākie lidojošie putni pasaulē.<br><br>
-                        span.task-question Cik 1KG smagas cukura paciņas kopumā jāuzliek uz svariem, lai tie būtu līdzsvarā ar gulbju tēviņu?
-                        span.task-desc 
-                            | <i class="fas fa-tasks"></i>Ieraksti savu atbildi!
             
             .task-container.task-container--hidden
+                //- .task-info-late.txt--centered.task-info-single
                 .task-type-5
+                    .info
+                        img( class="task-img task-img--no-shadow" src="img/tasks/6/info_item1.png")
+                        span.task-question Cik 1KG smagas cukura paciņas kopumā jāuzliek uz svariem, lai tie būtu līdzsvarā ar gulbju tēviņu?
                     .input-group
                         //- p.input-label Tava atbilde
                         input(type="number" placeholder="Ieraksti tikai skaitli" class="task-input")

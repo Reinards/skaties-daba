@@ -5,9 +5,9 @@ var Map_view = require('./map.js');
 var Task_view = require('./task.js');
 var Answers_view = require('./answers.js');
 
-
-$(document).ready(function(){ init(); });
-
+window.onload = function(){
+    init();
+}
 
 
 function init(){

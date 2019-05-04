@@ -5,7 +5,7 @@ var data_template = {
     current_task: -1,
     current_subtask: -1,
     last_location: [0,0], // long, lat
-    tasks: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], // 0-unseen, 1-seen, 2-submitted,correct, 3-submitted,wrong
+    tasks: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], // 0-unseen, 1-seen
     answers: {
         1:{
             1:null,

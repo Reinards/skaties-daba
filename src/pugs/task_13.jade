@@ -1,7 +1,7 @@
 html
     include includes/header.pug
         
-    body( id="task", class="noScroll", data-task="13" )
+    body( id="task", class="noScroll", data-task="13" data-location="1" )
 
 
         include includes/modal_quit.pug
@@ -14,14 +14,13 @@ html
             .info-container
                 .task-info
                     span.task-text.txt--justified
-                        | „Ko jūs prasāt man ēst, ja pagalmā liepa vēl pilna pumpuru?” tā reiz kāda nodzērusies daudzbērnu māmiņa savu plašo saimi sūtīja šķīt liepu pumpurus. Liepas barojuša ne tikai novārtā pamestos bērneļus, bet arī kara laikā glābusi daudzus no bada nāves. Mūsu senči no jaunajiem liepu dzinumiem vārījuši putru.<br><br>
+                        | „Ko jūs prasāt man ēst, ja pagalmā liepa vēl pilna pumpuru?” tā reiz kāda nodzērusies daudzbērnu māmiņa savu plašo saimi sūtīja šķīt liepu pumpurus. Liepas barojušas ne tikai novārtā pamestos bērneļus, bet arī kara laikā glābusi daudzus no bada nāves. Mūsu senči no jaunajiem liepu dzinumiem vārījuši putru.<br><br>
                         | Daudzās zemēs, piemēram, Korejā un Tālajos Austrumos, liepas ir pierasts pārtikas augs. Lai arī mums ēst liepu pumpurus un lapas šķiet nepierasti, tomēr liepa dod veselīgu, bioloģiski aktīvām vielām un dzīviem vitamīniem bagātu ēdmaņu.<br><br>
                         | Pilsētu apstādījumos liepas tiek apzāģētas, tādējādi veidojot dekoratīvu formu.<br><br>
-                        span.task-question Kurā laika posmā notiek koku apzāģēšana?
-                        span.task-desc 
-                            | <i class="fas fa-tasks"></i>Izvēlies pareizo atbilžu variantu!
             
             .task-container.task-container--hidden
+                .task-info-late.txt--centered.task-info-single
+                    span.task-question Kurā laika posmā notiek koku apzāģēšana?
                 .task-type-2
                     .top
                         div( class="item item_1" data-item_id="1" ) 

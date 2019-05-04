@@ -15,12 +15,15 @@ exports.init = function(game_state){
 
 function hideSplashScreen(){
     $(".splash_logo_0").removeClass("invisible");
+
     setTimeout(function(){
         $(".splash_logo_1").removeClass("invisible");
     },1000);
+
     setTimeout(function(){
         $(".splash_logo_2").removeClass("invisible");
     },2000);
+    
     setTimeout(function(){
         $("#section_splash").fadeOut(1000);
     },5000);
